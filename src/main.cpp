@@ -17,9 +17,9 @@ Encoder myEnc(1, 2);
 
 void setup() {
   
-  Keyboard.begin();
-  Serial.begin(9600);
-  Serial.println("Basic Encoder Test:");
+  //Keyboard.begin();
+  Serial.begin(500000);
+  Serial.println("Encoder Test:");
 }
 
 long oldPosition  = -999;
@@ -31,15 +31,7 @@ void loop() {
     
     previous = oldPosition;
     oldPosition = newPosition;
-
-    if(previous < newPosition) {
-      Keyboard.write('h');
-    }
-    if(previous > newPosition) {
-      Keyboard.write('l');
-    }
     
-    Serial.println(newPosition);  
-    delay(50);
+    Serial.println(newPosition);      
   }
 }
